@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="gitCards" ng-controller="gitController">
+
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.1/angular.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+  </head>
+
+  <body>
+    
+    <div class="container">
+      <div class="row">
+        <form id="searchForm">
+        <input type="search" ng-model="cardSearch">
+        <button ng-click="getCard()" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+      <div class="row">
+        <div id="gitCard" class="col-xs-12 cols-sm-6 col-md-4 col-lg-4 center-block text-center"
+              ng-repeat="card in cards">
+          <img class="cardImg" ng-src="{{card.avatar_url}}">
+          <h2>{{card.name}}</h2>
+          <h3>{{card.login}}</h3>
+        </div>
+      </div>
+      </div>
+    </div>
+
+
+    <script src="script.js"></script>
+  </body>
+
+</html>
